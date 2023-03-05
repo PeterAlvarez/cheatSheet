@@ -12,6 +12,8 @@ viw => agarra palabra completa
 ciw => borra y pone en insertar
 yiw
 
+
+
 daw => borra palabra bajo el cursor y un espacios tras la palabra
 vaw
 caw
@@ -450,4 +452,4 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
 
 
 
-
+esta es una prueba para git
