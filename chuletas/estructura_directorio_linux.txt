@@ -1,0 +1,52 @@
+/bin
+
+El directorio /bin es un directorio estático y es donde se almacenan todos los binarios necesarios para garantizar las funciones básicas a nivel de usuario. Solo almacena los ejecutables de usuario,
+
+
+/boot
+
+Es un directorio estático e incluye todos los ejecutables y archivos que son necesarios en el proceso de arranque del sistema, y que deberán ser utilizados antes que que el kernel empiece a dar las órdenes de ejecución de los diferentes módulos del sistema. Es también donde se encuentra el gestor de arranque GRUB.
+
+/dev
+
+Este directorio incluye todos los dispositivos de almacenamiento, en forma de archivos, conectados al sistema, es decir, cualquier disco duro conectado, partición, memoria USB, o CDROM conectado al sistema y que el sistema pueda entender como un volumen lógico de almacenamiento.
+
+. Este es el directorio que contiene, por decirlo de algún modo, la información de cada uno de los volúmenes, 
+sudo -fdisk -l
+
+/etc
+
+Es el encargado de almacenar los archivos de configuración tanto a nivel de componentes del sistema operativo en sí, como de los programas y aplicaciones instaladas a posteriori.
+
+Es un directorio que debería contener únicamente archivos de configuración, y no debería contener binarios.
+
+/lib 
+Incluye las bibliotecas esenciales  que son necesarios para que se puedan ejecutar correctamente todos los binarios que se encuentran en los directorios /bin y /sbin, así como los módulos del propio kernel.
+
+/media
+
+Representa el punto de montaje de todos los volúmenes lógicos que se montan temporalmente, ya sean unidades externas USB, otras particiones de disco, etc.
+
+En la mayoría de distribuciones GNU/Linux, desde hace ya algún tiempo, cada vez que se monta una unidad externa, partición, etc., esta se monta dentro del directorio /media y a su vez dentro de un directorio especifico dependiendo del usuario del sistema que monta el volumen.
+
+
+/opt
+
+Haciendo una analogía con Windows, vendría a ser algo como el directorio de “Archivos y Programas”, pero en este caso, como hemos dicho, para determinados programas que ya vienen auto-contenidos.
+
+/proc
+
+El directorio especial /proc proveé información completa y detallada acerca de los trabajos internos de Linux y te permite ajustar a la medida muchos aspectos de su configuración. Si te tomas algo de tiempo para aprender las posibilidades de este directorio, estarás en posición de obtener un sistema Linux más perfecto. ¿Y no es acaso lo que todos queremos?.
+
+
+/sbin
+
+Si hemos dicho que en /bin se almacenaban los binarios relativos a las funciones normales de usuario, /sbin hace lo mismo pero para los binarios relativos tareas propias del sistema operativo, y que solamente pueden ser gestionadas por el usuario root, tales como el arranque, tareas de restauración, reparación, etc.
+
+/usr
+
+El directorio /usr viene de “User System Resources” y actualmente sirve para almacenar todos los archivos de solo lectura y relativos a las utilidades de usuario, incluyendo todo el software instalado a través de los gestores de paquetes de cada distribución. Contiene los siguientes subdirectorios:
+
+/var
+
+contiene varios archivos con información del sistema, como archivos de logs, emails de los usuarios del sistema, bases de datos, información almacenada en la caché, información relativa a los paquetes de aplicaciones almacenados en /opt, etc. En cierto modo se podría decir que actúa a modo de registro del sistema.

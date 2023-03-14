@@ -1,0 +1,349 @@
+*********usuarios conectados al sistema
+$who
+$w
+$finger
+
+*********detener y expulsar usuarios
+pkill -STOP -u nomUsuario ---> para al usuario logueado
+pkill -CONT -u nomUsuario --> restableces al usuario
+pkill -KILL -u nomUsuario --> expulsa al usuario del serv..
+
+
+*******matar procesos
+
+kill -9 PID
+
+
+
+******ver los procesos ejecutandose
+ps
+ps -uxa
+
+
+**********crear usuario
+adduser nomUsuario --> crear un usuario con SHELL incluido
+useradd nomUsuario --> crea un usuario sin shell incluido
+useradd nomUsuario -m -s $SHELL cre usuario con shell
+passwd nomUsuario --> asigamos contraseña
+deluser --> elimina usuario del sistema
+
+********
+
+ find / -name uname 2> /dev/null
+
+
+******terminales
+tee /dev/tty4 | tee --->replica en otra consola
+
+****muestra el tamaño en bytes de un archovo o fichero
+du -h nombrearchivo
+
+******de todo
+cat -n --> muestra lineas numeradas
+tail muestra las ultimas
+head muestra las primeras lines
+
+******** paqueteria****
+aptitude search nomPaquete--->> busca paquetes
+aptitude remove nomPaquete--->> borra un paquete
+aptitude purge nomPaquete--->> borra paquetes y todas sus config..
+aptitude reinstall nomPaquete--->> reinstala la paqueteria
+aptitude show nomPaquete --> informacion del paquete
+aptitude clean --> limpia la cache de paquetes
+aptitude autoclean --> elimina los archivos existentes de la cache
+
+******dpkg
+para instalar un paquete con dpkg... la extecion del paquete debe
+ser .deb....
+
+dpkg -i archivo.deb
+dpkg --reconfigure nomPaquete --- configura un àquete
+
+**** list comand**
+apropos ... keyword
+
+****terminales***
+	gnome-terminal
+
+**** ruta de los ejecutables reconocidos por el terminal****
+	/usr/bin/
+
+****xmonad
+xfwm4& -->cierra xmonad
+
+Entonces, a manera de ejemplo, si quisieramos cambiar la tecla Bloq Mayus,
+para que funcione como Shift, ejecutamos la siguiente linea.
+
+Xmodmap -e “keycode 66 = Shift_L”
+
+**** usb****
+
+umount /dev/sdb ---desmontando
+mkfs.vfat -F 32 /dev/sdb -I
+
+
+
+
+***** resolucion de la pantalla***
+xrandr -q -->muestra la capasidad de la pantalla
+xrandr --> nos dice la actual q tenemos
+xrandr -q | grep -w Screen --> saber el maximo y minimo soportado
+
+
+****reproductor de musica***
+
+mocp -x --> apagar
+mocp -f --> adelante
+mocp -p --> atras
+amixer sset Master --->>10 volumen al 10
+mocp -i --> informacion de la cancion que esta tocando
+
+***** linux ****
+
+to mute:
+
+pactl set-sink-mute 0 1
+and unmute:
+
+pactl set-sink-mute 0 0
+
+
+******* wifi conect******
+
+sudo ifconfig wlan0 up -->para encender  el wifi
+sudo ifconfig wlan0 down --> para apagar el wifi
+
+iwlist wlan0 scan --> para scanear
+
+sudo iwconfig wlan0 essid ESSID key CONTRASEÑA --> para conectarse
+
+sudo dhclient wlan0 --> verificacion
+
+
+
+------2da forma-----------
+
+nmcli dev wifi list --> para scanner
+ nmcli dev wifi con "ssid" password "password-de-la-red-wifi" --> para conectarse
+
+
+****** console web ******
+elinks
+w3m
+lynx
+
+
+
+--------- tariquia -------
+sudo vim /etc/resolv.conf ********172.16.0.10
+
+
+
+****** comandos para magento ******
+detener el servicio en apache
+	service apache2 stop
+
+sacar un servicio de apache2
+	sudo a2dissite magento
+	sudo a2dissite [configuracion apache]
+    sudo unlink /etc/apache2/sites-enabled/magento.conf
+
+agregar un servicio en apache
+	sudo a2ensite 000-default
+	sudo a2ensite [configuracion apache]
+ 	sudo ln -s /etc/apache2/sites-available/magento.conf /etc/apache2/sites-enabled/magento.conf
+
+restar apache2
+	sudo service restart apache2
+
+lista de configuraciones existentes desactivadas
+   ls /etc/apache2/sites-available/
+
+lista de configuraciones activadas
+   ls /etc/apache2/sites-enabled/
+   ls -la /etc/apache2/sites-enabled/
+
+   siempre restar apache al realizar cambios
+
+
+  /*/*/*/*//*/**/
+
+	cd git clone git@git.buildateam.io:mage/royalrobbins.com.git
+	git clone git@git.buildateam.io:mage/royalrobbins.com.git
+
+	curl -O https://files.magerun.net/n98-magerun.phar
+	./n98-magerun.phar sys:check
+
+	chmod +x n98-magerun.phar
+	./n98-magerun.phar sys:check
+	./n98-magerun.phar cache:disable
+	./n98-magerun.phar cache:clean
+	./n98-magerun.phar cache:flush
+	./n98-magerun.phar sys:check
+	sudo ./n98-magerun.phar sys:check
+	./n98-magerun.phar sys:check
+	curl -O https://files.magerun.net/n98-magerun.phar
+	chmod +x n98-magerun.phar
+
+	chmod -R 777 ./royalrobbins.com/
+	sudo chmod -R 777 ./royalrobbins.com/
+
+	./n98-magerun.phar sys:check
+	./n98-magerun.phar sys:check
+	mkdir media
+	./n98-magerun.phar sys:check
+	./n98-magerun.phar cache:disable
+	./n98-magerun.phar cache:clean
+	./n98-magerun.phar cache:flush
+	chmod -R 777 .
+	sudo chmod -R 777 .
+	tail -f var/log/system.log
+	php -v
+	tail -f var/log/system.log
+	sudo apt-get install php7.1-geoip
+	sudo apt autoremove
+	sudo apt-get install php7.1-geoip
+	sudo apt-get install php-geoip
+	sudo apt-get remove --purge php-geoip
+
+
+/*/*/*saber si esta corriendo un servicio
+	systemctl status dnscrypt-proxy.service
+
+	para ver todos los servicios
+	systemctl list-unit-files --type service --all
+
+
+	/*/***/ fijarse que apache este corriendo
+
+	sudo systemctl start apache2   //// iniciar apache
+    sudo systemctl status apache2 /////ver estado de apache
+
+
+//**/*/*/*/*/
+
+	archivos ssh para royalbbins
+	ssh-add ~/.ssh/id_rsa_jhon
+	ssh-add ~/.ssh/id_rsa_ubaldino
+
+
+
+	/* actualizar git */
+	git pull
+
+	/* crea una nueva rama (home_template = nombre)*/
+	git checkout -b home_template
+
+	/*visualiza la rama en la que te encuantras */
+	git branch
+
+	git status
+
+	/*visualiza los cambios en los proyectos*/
+	git diff
+
+	/*configuracion en git/config*/
+	vim .git/config
+
+
+//*/**/*/*/*/ limpiar cache //**/*/*/ super coman
+./n98-magerun.phar cache:clean && ./n98-magerun.phar cache:flush && ./n98-magerun.phar cache:dir:flush && rm -rf var/session/sess_* && tail  -f var/log/system.log
+
+
+
+-----------MySql-----------
+Ingresaos al directorio del royecto
+    cd proyectos/magento/
+
+para iniciar maridb
+    4
+
+para verificar (status) el funcionamiento
+    sudo systemctl status mariadb
+
+para inciar apache
+	sudo systemctl start apache2
+
+verificamos funcionamiento de pache
+	sudo systemctl status apache2
+
+comando
+	journalctl -xe
+
+	mkdir -p /home/peter/proyectos/magento/logs
+
+ips activos
+	cat /etc/hosts
+
+verificar errores
+	tail -f var/log/debug.log
+	tail -f logs/error.log
+	sudo chmod -R 777 var/
+	tail -f logs/error.log
+
+
+
+
+*//**/*//*  Mysql console BD/*/**/*/*/*/
+
+ingresando a mysql
+	mysql -u root -proot
+todas las base de datos
+	show databases;
+entrar a una base de datos
+	use [baseDeDatos];
+muestra las tablas de las bases de datos
+	show tables;
+muestra una tabla  especifica de una BD
+	desc [nombreDeTabla];
+cambiar de clave primaria
+ALTER TABLE `[clavePrimaria]` DROP PRIMARY KEY, ADD PRIMARY KEY(`[nuevaClavePrimaria]`);
+borra un campo de una tabla en BD
+	ALTER TABLE `alumno` DROP `clave_alu`;
+agrera un campo a una table
+	ALTER TABLE `[nombrTbla]` ADD `[nombCampo]` [tipDato](#) NULL AFTER `[nombrTablaReferencia]`;
+crear tabla
+	CREATE TABLE `escuela`.`alumno_profesor` ( `[table]` INT(12) NULL ) ENGINE = InnoDB;
+
+
+
+printenv=> para ver variables globales
+
+
+
+cambiar permisos a ficheros modo recursivo
+sudo chmod 755 $(find /home/stux/myCode -type d)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

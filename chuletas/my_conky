@@ -1,0 +1,220 @@
+ww****encabezado***
+
+use_xft yes --> activa la fuente
+xftfont Bitstream Vera Sans:size=8 ---> tipo de letra y tamañño
+xftfont Zero Threes:size=5  -->tipo de letra y tamañño
+xftfont Monospace:size=20  -->tipo de letra y tamañño
+maximum_width 15 --> tamaño de la ventana conky
+
+
+#####################    MI_CONKY    ###################
+#......................................................#
+#		     PETER/TUX_PREX		       #
+#......................................................#
+########################################################
+# notas: ${alignc -34} = alinha na horizontal, ${voffset -30} = alinha vertical,
+# $stippled_hr = linha pontilhada
+
+###### Colores #######################
+default_color ffffff # cor azul no conky
+
+color0 FFFFF0 #Ivory
+color1 FFA07A #LightSalmon
+color2 FF8C00 #laranja escuro
+color3 7FFF00 #Chartreuse
+color4 778899 #LightSlateGrey
+color5 FFDEAD #NavajoWhite
+color6 00BFFF #azul celeste
+color7 48D1CC #MediumTurquoise
+color8 FFFF00 #amarelo
+color9 FF0000 #vermelho
+color10 00FF00 # green
+
+default_shade_color black # cor da sombra mais clara
+default_outline_color white # cor da sombra bem escura
+
+background yes
+use_xft yes
+
+# Fonte e tamanho da fonte dentro do conky
+xftfont Sans:size=8
+xftalpha 1
+
+update_interval 1
+total_run_times 0
+
+####definicion ventana conky##########
+own_window yes
+own_window_transparent yes
+own_window_type desktop # podem ser = normal ou override #
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+
+###tamaño de la ventana conky###
+minimum_size 0 0
+maximum_width 250
+
+###### bordes y sombras
+draw_shades yes # sombra nas letras
+draw_outline no ## sombra bem escura nas letras
+draw_borders no # borda ao redor do conky
+draw_graph_borders yes # bordas nos graficos internos
+
+##aliniamiento###
+alignment top_right
+gap_x 0
+gap_y 30
+
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+
+override_utf8_locale yes
+
+own_window_argb_value 0
+own_window_argb_visual yes
+own_window_colour 000000
+TEXT
+##################################
+##          ENCABEZADO          ##
+##################################
+${color orange}${font OpenLogos:size=40}${sysname} ${color}${color orange}${font}
+${voffset -80}${goto 188}${font UbuntuTitleBold:size=14}${color white}${exec  cat /etc/*release | grep 'RELEASE' | awk -F'=' '{print $2}'}
+${voffset -60}${goto 190}${font OpenLogos:size=28}${font UbuntuTitleBold:size=10}${color white}${font UbuntuTitleBold:size=12}${color white}${pre_exec lsb_release -c | cut -f2}${color}${font}
+###################################
+
+##################################
+##          Relogio             ##
+##################################
+${voffset 2}${font DroidSans:bold:size=20}${offset 8}${color red}${voffset -2}${hr}${font}
+### relogio
+${voffset 19}${font Pixel LCD7:size=35}${color4}${if_match ${time %l}<=9}${alignc 40}${time %l:%M%p}${else}${if_match ${time %l}>=10}${alignr 100}${time %l:%M%p}${endif}${endif}${font}
+##################################
+##      HORA DIA MES AÑO       ##
+##################################
+#dia da semana, terça, quarta
+${voffset -60}${font DroidSans:size=9}${color3}${alignc -75}${time %A}${font}
+# dia
+${voffset 0}${font DroidSans:bold:size=18}${if_match ${time %e}<=9}${color0}${alignc -65}${time %e}${font}${else}${if_match ${time %e}>=10}${color0}${alignc -75}${time %e}${endif}${endif}${font}
+#mes
+${voffset 2}${font DroidSans:size=9}${color3}${alignc -75}${time %B}${font}
+# ano
+${voffset 0}${font DroidSans:size=9}${color3}${alignc -75}${time %Y}${font}
+#circulo
+#${voffset -85}${font CutOutsFor3DFX:size=76}${color1}${alignc -34}2${font}
+#calendario
+#${voffset -70}${offset 4}${font DroidSansMono:size=9}${color0}${execpi 60 VinDSL_Cal_9=`date +%-d`; cal -h | sed -e 's/\r//g' -e 's/^/ /g' -e '1d' -e 's/\<'"$VinDSL_Cal_9"'\>/${color3}&${color0}/'}${font}
+##################################
+##            SISTEMA           ##
+##################################
+${voffset 4}${color red}${hr 1}${color}
+${voffset 4}${color7}Distro	: $alignr ${exec cat /etc/issue.net} $machine ${color}
+${color7}Kernel: $alignr${kernel}
+${exec cat /proc/cpuinfo | grep "model name" -m1 | cut -d":" -f2 | cut -d" " -f2- | sed 's#Processor ##'}
+##Temperatura do Pc: $alignr${color9}${font MyriadPro:bold:size=9}${hwmon temp 1}°C${color}${font} ## desativado ##
+Maquina: $alignr$nodename
+Usuario: $alignr${exec whoami}
+Tiempo activo: $alignr$uptime_short${color}
+${color8}Cache : 0${execi 60 find /var/cache/apt/archives -type f | wc -l} $alignr Lixeira : 0${execi 60 find ~/.local/share/Trash/files -type f | wc -l}${color}
+#####################################
+${alignc}${color3} PARTICIONES DE DISCO ${color}
+####################  home
+${color4}${fs_bar 20 /home}
+${voffset -25}${offset 5}${color0}HOME: ${fs_size /home}${alignr 5}$color${fs_free /home}
+${alignc}${voffset -19}${color7}${voffset 10}$color$font
+################### root
+${color4}${fs_bar 20 /}
+${voffset -25}${offset 5}${color0}ROOT: ${fs_size /}${alignr 5}$color${fs_free /}
+${alignc}${voffset -19}${color7}${voffset 10}$color$font
+###################    ntfs
+${color4}${fs_bar 20 /dev/sda3}
+${voffset -25}${offset 5}${color0}NTFS: ${fs_size /dev/sda3}${alignr 5}$color${fs_free /dev/sda3}
+${alignc}${voffset -19}${color7}${voffset 15}$color$font
+########################################################################################
+#${color red}${font Poky:size=15}P${font} PROCESSADORES ${hr 1}${color}#################
+########################################################################################
+${alignc}${color3} PROCESADOR EN USO ${color}
+${color2}CPU: ${color0}${cpu cpu0}%  ${goto 60}${color4}${cpubar cpu0 15,100}${cpubar cpu1 15,20}${cpubar cpu2 15,20}${cpubar cpu3 15,20}${cpubar cpu4 15,20}
+${color4}${cpugraph cpu1 50,120 FFFF00 FF0000 s}${cpugraph cpu2 50,120 FFFF00 FF0000 s}${voffset -20}
+
+${cpugraph cpu3 50,120 FFFF00 FF0000 s}${cpugraph cpu4 50,120 FFFF00 FF0000 s}
+#
+${voffset -113}${color0}${goto 10}01 ${cpu cpu0}% / ${exec sensors|grep 'Core 0'|awk '{print $3}'} ${goto 130}02 ${cpu cpu1}% / ${exec sensors|grep 'Core 1'|awk '{print $3}'} ${goto 0} ${voffset 55} ${goto 10}3 ${cpu cpu2}% / ${exec sensors|grep 'Core 2'|awk '{print $3}'} ${goto 130}4 ${cpu cpu3}% / ${exec sensors|grep 'Core 3'|awk '{print $3}'}
+
+
+
+# PROCESSOS DEL CPU
+${top name 1}$alignr ${top pid 1} ${top cpu 1}% - ${top mem_res 1}
+${top name 2}$alignr ${top pid 2} ${top cpu 2}% - ${top mem_res 2}
+${top name 3}$alignr ${top pid 3} ${top cpu 3}% - ${top mem_res 3}
+################### MEMORIAS
+${color4}${membar 23}
+${voffset -25}${offset 5}${color8}Ram: $memmax / $mem / $memperc% ${alignr}Swap: $swapperc%${color}
+#
+################### RED LOCAL E INTERNET ####
+#WLAN0
+
+${alignc}${color3} INTERNET ${color}
+#
+${if_up wlp2s0}${color7}Red Wifi: ${alignr}${wireless_essid wlp2s0}
+Señal:  ${alignc}${wireless_link_qual wlp2s0}% ${alignr}${color7}${wireless_link_bar 7,130 wlp2s0}${color}
+IP: ${color9}${addr wlp2s0}${color}     ${if_gw}${color2}${alignr}GateWay: ${color}${gw_ip}${color2}
+Puertos TCP:${color}${tcp_portmon 1 65535 count} ${alignr}${color2}DNS: ${color}${nameserver}
+Uploads: ${goto 130}Downloads:
+${upspeed wlp2s0} ${goto 65}/ ${totalup wlp2s0}${font}${goto 130}${alignc}${downspeed wlp2s0} ${goto 184}/ ${totaldown wlp2s0}${font}
+${upspeedgraph wlp2s0 20,115 F57900 FCAF3E}${alignr}${downspeedgraph wlp2s0 20,115 F57900 FCAF3E}
+#
+${color}${hr 1}
+${alignc}${color3} ESTADO DE BATERIA ${color}
+${color orange}${exec acpi | grep "Battery 0:"} ${color}
+#
+############# ETH0  ############################### ..... falta configurar
+#ETH0
+${endif}${else}${if_up eth0}
+IP: ${color9}${addr eth0}${color}     ${if_gw}${color2}${alignr}GateWay: ${color}${gw_ip}${color2}
+Puertos TCP:${color}${tcp_portmon 1 65535 count} ${alignr}${color2}DNS: ${color}${nameserver}
+${color7}Uploads: ${goto 130}Downloads:
+${upspeed wlan0} ${goto 65}/ ${totalup wlan0}${font}${goto 130}${alignc}${downspeed wlan0} ${goto 184}/ ${totaldown wlan0}${font}${color}
+${upspeedgraph wlan0 20,115 F57900 FCAF3E}${alignr}${downspeedgraph wlan0 20,115 F57900 FCAF3E}
+
+${color}${hr 1}
+${color}DesktopAtual: $alignr 0${desktop}
+${color orange}${sysname} ${exec cat /etc/issue.net} $machine ${color} $alignr V.${conky_version}
+####### internet # wlan1 ################################# ..... falta configurar
+# WLAN1
+${endif}${else}${if_up wlan1}
+Red Wifi: ${alignr}${wireless_essid wlan0}
+Sinal:  ${alignc}${wireless_link_qual wlan0}% ${alignr}${color7}${wireless_link_bar 7,130 wlan1}${color}
+IP: ${color9}${addr wlan1}${color}     ${if_gw}${color2}${alignr}GateWay: ${color}${gw_ip}${color2}
+Portas TCP:${color}${tcp_portmon 1 65535 count} ${alignr}${color2}DNS: ${color}${nameserver}
+Uploads: ${goto 130}Downloads:
+${upspeed wlan0} ${goto 65}/ ${totalup wlan0}${font}${goto 130}${alignc}${downspeed wlan0} ${goto 184}/ ${totaldown wlan0}${font}
+${upspeedgraph wlan0 20,115 F57900 FCAF3E}${alignr}${downspeedgraph wlan0 20,115 F57900 FCAF3E}
+#
+${color}${hr 1}
+${color}DesktopAtual: $alignr 0${desktop}
+${color orange}${sysname} ${exec cat /etc/issue.net} $machine ${color} $alignr V.${conky_version}
+## FINAL DE CONKY #######
+${endif}${else}
+${endif}
+${endif}
+${font DroidSans:size=11}${color Red}   <<- ESTAS SIN INTERNET ->>${font}${color}
+
+${color red}${hr 2}
+
+
+
+
+
+/////redes
+
+${alignc}${color3} INTERNET ${color}
+
+${color0}${font Poky:size=15}w${font Zero Threes:bold:size=10}${color4}${goto 36}--No hay RED conectada
+${color #98c2c7}Velocidad de subida: $color ${upspeed eth0}kb/s${color #98c2c7}
+Velocidad de descarga:$color ${downspeed eth0}kb/s
+
+${font Arial:bold:size=10}${color DarkRed}WIRELESS ${color DarkSlateGray}${hr 2}
+$font${color DimGray}Wireless signal: ${alignr}${wireless_link_qual ath0}%
+IP address: ${alignr}${addr ath0}
+Download speed: ${alignr}${downspeedf wifi0} Kb/sec

@@ -1,0 +1,16 @@
+ng new [myAp]                          => crea un nuevo proyecto en angular
+ng serve -o                            => levantar en servidor
+ng generate component [myComponent]    => genera un componente
+ng build my-app -c production          => Compila my-app para ponerla en production
+node glob.js --trace-warnings --trace-deprecation Erros o Bug
+
+ng g module app-routing --flat --module=app
+>flay => para que no cree la carpeta
+>>module=app => para que se configure en app
+
+=============== youtube-dl=======================
+youtube-dl -f 'bestvideo+bestaudio' --recode-video mp4 "URL_VIDEO"
+youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 "URL_video"
+
+
+

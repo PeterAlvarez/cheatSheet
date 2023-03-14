@@ -1,0 +1,15 @@
+Adrian
+Ubal
+Naira
+Jose
+brayan
+Yago
+Peter
+vitia
+
+
+mysql -u root -proot
+
+show databases ---> para saber todas las base de datos que tenemos
+use [database] ---> Ingresamos a la base de datos deseado
+show table     ---> muestra las tablas de la base de datos	

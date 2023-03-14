@@ -1,0 +1,59 @@
+Una vez que instalo qemu agrego mi usuario a los grupos "libvirt" y "kvm"
+
+# gpasswd -a <your User Name> libvirt
+# gpasswd -a <your User Name> kvm
+qemu-system-x86_64 -enable-kvm -boot c -cdrom VMware\ VIM.iso -m 1G -hda test.img -net nic -net bridge,br=br0
+Reemplace con su nombre de usuario real.
+
+Tendrá que cerrar sesión y volver a iniciar sesión. O podría ejecutar los siguientes comandos
+
+$ newgrp libvirt
+$ newgrp kvm
+
+
+/**//*/*/*CONVERSIÓN DE VMDK A QCOW2//**//**//*
+
+$ qemu-img convert -f vmdk -O qcow2 IE11\ -\ Win8.1-disk1.vmdk IE11-Win8.1.qcow2
+
+
+qemu-img                            - es la herramienta de manipulación de imágenes qemu incorporada
+convertir                           - le dice a qemu-image que quiere convertir un archivo  en este caso archivos .vmdk
+-f vmdk                                 (opcional)  - Este es un comando opcional (puede dejarlo fuera) qemu puede detectar automáticamente. Esto le dice a qemu de qué tipo de archivo está convirtiendo.
+
+-O qcow2                                (letra mayúscula O)  - Esto le dice a qemu a qué tipo de archivo va a convertir.
+IE11 \ - \ Win8.1.vmdk                  - Es el archivo desde el que está convirtiendo.
+IE11-Win8.1.qcow2                       (Puede ser cualquier nombre que desee)  : es el archivo de salida al que está convirtiendo.
+
+
+
+/**/*//*/**/EJECUTANDO SU NUEVA IMAGEN QCOW2*/*/**//*
+
+$ qemu-system-x86_64 -m 4G -smp 2 --enable-kvm IE11-Win8.1.qcow2
+
+Vamos a desglosar eso:
+
+qemu-system-x86_64              - Este comando inicia quemu en modo x64bit (requiere procesador x64bit).
+-m 4G                             : asigna 4 GB de RAM a la máquina virtual.
+-smp 2                             (opcional)  - Sugiere a qemu que use el número refrendado de núcleos de su CPU a la máquina virtual.
+-enable-kvm                         (opcional)  : habilita KVM en tu vm para ayudar con el rendimiento.
+IE-Win8.1.qcow2                      - es la ruta a la imagen que desea ejecutar.
+
+
+
+br0
+ip link add name br0 type bridge
+ip addr add 172.20.0.1/24 dev br0
+ip link set dev br0 up
+sysctl -w net.ipv4.ip_forward=1
+iptables --table nat --append POSTROUTING --out-interface enp3s0 -j MASQUERADE
+iptables --insert FORWARD --in-interface br0 -j ACCEPT
+
+iptables --table nat --append POSTROUTING --out-interface enp3s0 -j MASQUERADE
+
+funcion hola(int a: int b){ hola
+        return a+b
+
+        return a+b
+        return a+b
+        return a+b
+hola listchars=tab:\|\ ,trail:· list}

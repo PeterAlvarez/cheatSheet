@@ -56,7 +56,7 @@ linkea tu rama con el repositorio del servidor
 ##git checkout master
 moverse a la rama master
 
-##git pull origin master
+##git pull <ramaInicial> <ramadestino>
 para actualizar el ropositorio a la ultima version
 
 ##git branch --merged
@@ -64,6 +64,7 @@ las branch mergeadas asta el momento
 
 ##git merge [nombre de tu rama de trabajo]
 mete tus cambios de la rama de trabajo a la rama master
+tambien puede actualizar cualquier rama
 
 ##git push -u origin master
 sube tu codigo del local al servidor
@@ -83,5 +84,11 @@ git config --global credential.helper cache
 
 ##unir dos repositorios git
 git subtree add -P gitNeo ../gitNeo/ HEAD
+
+git config --global init.defaultBranch <name>
+
+solucion a este problema
+error:Actualizaciones fueron rechazadas porque la punta de tu rama actual está
+git push <origen> <rama en github> -f
 
 -----con esa configuracion tendrias que tener tu gitconfigurado xd...

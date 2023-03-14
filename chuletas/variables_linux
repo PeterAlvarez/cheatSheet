@@ -1,0 +1,52 @@
+
+fecha
+
+dia = $(date +%e) 
+mes = $(date +%B)
+
+
+operadores aritmeticos
+
++ (adición)
+- (sustracción)
+\* (producto)
+/ (división)
+% (módulo)
+
+operadores logicos para numeros
+
+# -eq	Igual que (equal), sólo para números enteros
+# -ne	Diferente que (non equal), sólo para números enteros
+# -gt	Mayor que (greater than)
+# -ge	Mayor o igual que (greater or equal than)
+# -lt	Menor que (less than)
+# -le	Menor o igual que (less or equal than)
+
+
+File Operations:
+
+-d es un directorio
+-e existe el fichero
+-f es  un fichero ordinario
+-r es legible
+-s es no vacio
+-w es escribible
+-x es ejecutable
+-o eres el dueño del fichero
+-G el grupo es igual al tuyo
+-nt fichero1 es mas reciente que fichero2
+-ot fichero1 es mas antiguo que fichero2
+
+operadores cadenas
+ = igual 
+!= doferente
+-n con longitud mayor que 0
+-z longitud igual a 0 o vacio
+
+operadores boleanos
+
+! negacion
+-a --> and
+-o --> or
+
+
