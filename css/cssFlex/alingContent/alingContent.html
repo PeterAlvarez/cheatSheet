@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>aling Content</title>
+    <link rel="stylesheet" href="./alingContent.css">
+  </head>
+  <body>
+    <p>Nota: Esta propiedad solo tiene efecto en
+    contenedores flexibles de varias líneas, donde
+    flex-flow se establece en wrap o wrap-reverse).
+    Un contenedor flexible de una sola línea
+    (es decir, donde flex-flow se establece en su
+    valor predeterminado no-wrap) no reflejará align-content.<br>
+    Modifica el comportamiento de la propiedad flex-wrap.
+    Es similar a alinear elementos, pero en lugar de alinear
+    elementos flexibles, alinea líneas flexibles <br>
+    <b>LOS MUEVE A TODO EL COTEINER EN CONJUNTO</b></p>
+
+    <h1>Aling Items</h1>
+    <h2> align-content: flex-start;(Default)</h2>
+    <div class="container start">
+      <div>item 1</div>
+      <div>item 2</div>
+      <div>item 3</div>
+      <div>item 4</div>
+      <div>item 5</div>
+      <div>item 6</div>
+      <div>item 7</div>
+      <div>item 8</div>
+      <div>item 9</div>
+      <div>item 10</div>
+      <div>item 11</div>
+      <div>item 12</div>
+    </div>
+    <h2> align-content : stretch;</h2>
+    <div class="container stretch">
+      <div>item 1</div>
+      <div>item 2</div>
+      <div>item 3</div>
+      <div>item 4</div>
+    </div>
+    <h2> align-content :flex-end;</h2>
+    <div class="container end">
+      <div>item 1</div>
+      <div>item 2</div>
+      <div>item 3</div>
+      <div>item 4</div>
+      <div>item 5</div>
+      <div>item 6</div>
+      <div>item 7</div>
+    </div>
+    <h2> align-content: center;</h2>
+    <div class="container center">
+      <div>item 1</div>
+      <div>item 2</div>
+      <div>item 3</div>
+      <div>item 4</div>
+      <div>item 5</div>
+      <div>item 6</div>
+      <div>item 7</div>
+      <div>item 8</div>
+      <div>item 9</div>
+      <div>item 10</div>
+      <div>item 11</div>
+      <div>item 12</div>
+    </div>
+    <h2> align-content: space-between;</h2>
+    <div class="container between">
+      <div>item 1</div>
+      <div>item 2</div>
+      <div>item 3</div>
+      <div>item 4</div>
+      <div>item 5</div>
+      <div>item 6</div>
+      <div>item 7</div>
+      <div>item 8</div>
+      <div>item 9</div>
+      <div>item 10</div>
+      <div>item 11</div>
+      <div>item 12</div>
+    </div>
+    <h2> align-content: space-around;</h2>
+    <div class="container around">
+      <div>item 1</div>
+      <div>item 2</div>
+      <div>item 3</div>
+      <div>item 4</div>
+      <div>item 5</div>
+      <div>item 6</div>
+      <div>item 7</div>
+      <div>item 8</div>
+      <div>item 9</div>
+      <div>item 10</div>
+      <div>item 11</div>
+      <div>item 12</div>
+    </div>
+    <h2> align-content: space-evenly;</h2>
+    <div class="container evenly">
+      <div>item 1</div>
+      <div>item 2</div>
+      <div>item 3</div>
+      <div>item 4</div>
+      <div>item 5</div>
+      <div>item 6</div>
+      <div>item 7</div>
+      <div>item 8</div>
+      <div>item 9</div>
+      <div>item 10</div>
+      <div>item 11</div>
+      <div>item 12</div>
+    </div>
+  </body>
+</html>

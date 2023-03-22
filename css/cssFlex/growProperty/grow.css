@@ -1,0 +1,29 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.flex-container {
+  display: flex;
+  align-items: stretch;
+  background-color: #282828;
+}
+
+.flex-container > div {
+  background-color: tomato;
+  color: white;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.item1, .item2{
+    flex-grow: 1;
+}
+
+.item3{
+    flex-grow: 5;
+}

@@ -1,0 +1,51 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.container {
+  background-color: tomato;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.start {
+  align-items: start;
+}
+
+.end {
+  align-items: flex-end;
+}
+
+.center {
+  align-items: center;
+}
+
+/*Los "elementos de alineación: estiramiento;"*/
+/*estira los elementos flexibles para llenar*/
+/*el contenedor (esto es predeterminado)*/
+.stretch {
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+
+.baseline {
+  align-items: baseline;
+}
+
+.baseline > div:nth-child(2),
+.baseline > div:nth-child(10) {
+  font-size: 40px;
+}
+
+.container > div {
+  background-color: lime;
+  text-align: center;
+  border: 5px solid gray;
+  width: 20%;
+}

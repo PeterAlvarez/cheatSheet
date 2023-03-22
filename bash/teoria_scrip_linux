@@ -1,0 +1,19 @@
+#!bin/bash	 ----> lo que  hace q se reconozca como scrips
+sleep 10s  	 ----> se ejecuta 10s despues
+
+condicionesles
+	if [v2 -eq v2];
+	then
+		comando
+	else
+		comando
+	fi
+
+
+-eq	Igual que (equal), sólo para números enteros
+-ne	Diferente que (non equal), sólo para números enteros
+-gt	Mayor que (greater than)
+-ge	Mayor o igual que (greater or equal than)
+-lt	Menor que (less than)
+-le	Menor o igual que (less or equal than)
+

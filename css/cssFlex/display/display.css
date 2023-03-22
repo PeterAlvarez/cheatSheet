@@ -1,0 +1,24 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+.container {
+    background-color:tomato;
+    display: flex;
+}
+
+.item, .item2{
+    border: medium solid grey;
+    padding:5px;
+}
+
+.item2{
+    height:10vh;
+}
+
+.container2 {
+    background-color:lime;
+    display: inline-flex;
+}

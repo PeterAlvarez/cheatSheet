@@ -1,0 +1,58 @@
+
+CREATE TABLE prueba (
+    id_fecha    varchar(15) not null,
+    fecha       date        not null,
+    dia_sem     varchar(15) not null,
+    dia_año     integer,
+    vacaciones  varchar(10),
+    fin_sem     varchar(10),
+    mes_anio    varchar(15),
+    sem_anio    varchar(10)
+);
+
+select * from cliente
+
+SELECT * FROM nombre;
+
+
+CREATE TABLE peter (
+    mes_anio    varchar(15),
+    sem_anio    varchar(10)
+);
+
+CREATE TABLE israel (
+    mes_anio    varchar(15),
+    sem_anio    varchar(10)
+);
+
+CREATE TABLE prueba2 (
+    mes_anio    varchar(15),
+    sem_anio    varchar(10)
+);
+
+
+CREATE TABLE ppppp (
+    mes_anio    varchar(15),
+    sem_anio    varchar(10)
+);
+
+
+CREATE TABLE hut (
+    mes_anio    varchar(15),
+    sem_anio    varchar(10)
+);
+
+
+
+
+CREATE TABLE hola (
+    mes_anio    varchar(15),
+    sem_anio    varchar(10)
+);
+
+
+
+
+
+
+

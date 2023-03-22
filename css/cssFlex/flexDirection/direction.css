@@ -1,0 +1,53 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+section{
+    background-color:lime;
+    height:20vh;
+    display: flex;
+}
+
+.container {
+    flex-direction: row;
+}
+
+.container2 {
+    flex-direction: row-reverse;
+}
+
+.container3{
+    flex-direction:column;
+}
+
+.container4{
+    flex-direction: column-reverse;
+}
+
+.container5{
+    display:inline-flex;
+    flex-direction:row;
+}
+
+.container6{
+    display:inline-flex;
+    flex-direction:row-reverse;
+}
+
+.container7{
+    display:inline-flex;
+    flex-direction: column;
+}
+
+.container8{
+    display:inline-flex;
+    flex-direction:column-reverse;
+}
+
+.item{
+    border: medium solid grey;
+    background-color:tomato;
+}
+

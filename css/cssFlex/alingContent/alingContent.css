@@ -1,0 +1,51 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  background-color: tomato;
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 200px;
+  background-color: tomato;
+}
+
+.container > div {
+  background-color: lime;
+  width: 20%;
+  border: 5px solid gray;
+  text-align: center;
+  /*margin: 5px; Rompe el 20% del item */
+}
+
+.stretch {
+  align-content: stretch;
+}
+
+.end {
+  align-content: flex-end;
+}
+
+.center {
+  align-content: center;
+}
+
+.start {
+  align-content: flex-start;
+}
+
+.between {
+  align-content: space-between;
+}
+
+.around {
+  align-content: space-around;
+}
+
+.evenly {
+  align-content: space-evenly;
+}

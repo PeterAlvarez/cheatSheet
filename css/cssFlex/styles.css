@@ -1,0 +1,36 @@
+/*selector universal seleeciona a todos los dd*/
+/*#id       	        #firstname	    Selects the element with id="firstname"*/
+/*.class    	        .intro	        Selects all elements with class="intro"*/
+/*element.class	        p.intro	        Selects only <p> elements with class="intro"*/
+/**	                    *	        Selects all elements*/
+/*element	            p	        Selects all <p> elements*/
+/*element,element,..	div, p	    Selects all <div> elements and all <p> elements*/
+
+/*.saludo{*/
+    /*padding: 10px;*/
+    /*text-align: center;*/
+    /*color: navy;*/
+    /*border: 10px solid;*/
+/*}*/
+*,
+*::after,
+*::before{
+    box-sizing:border-box;
+}
+
+.container {
+    background-color:lime;
+    height:20vh;
+
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.item{
+    width: 20%;
+    height:20%;
+    border: medium solid grey;
+    background-color:tomato;
+}
