@@ -1,0 +1,54 @@
+package grafoPonderado;
+
+public class Principal {
+	public static void main(String[] args) {
+		GrafoPonderado g = new GrafoPonderado(10);
+		
+		g.insertarNodo("A");
+		g.insertarNodo("B");
+		g.insertarNodo("C");
+		g.insertarNodo("D");
+		g.insertarNodo("E");
+
+		g.insertarArco("A","B", 2);
+		
+		
+		
+		
+		
+		
+		
+//		g.insertarNodo("F");
+//		g.insertarNodo("G");
+//		g.insertarNodo("H");
+//		g.insertarNodo("I");
+	
+//		g.insertarArco("A", "B", 6);
+//		g.insertarArco("A", "G", 8);
+//		g.insertarArco("A", "D", 10); //10
+//		g.insertarArco("B", "C", 11);//11
+//		g.insertarArco("B", "H", 13);//13
+//		g.insertarArco("B", "E", 15);//15
+//		g.insertarArco("C", "H", 4);
+//		g.insertarArco("D", "E", 6);
+//		g.insertarArco("E", "F", 2);
+//		g.insertarArco("F", "G", 4);
+//		g.insertarArco("F", "I", 6);
+//		g.insertarArco("I", "H", 7);
+//		g.insertarArco("I", "G", 5);
+//		g.insertarArco("G", "H", 5);
+//		
+		
+		
+		
+		g.matrizDeRecorrido();
+		g.matrizDistanciaOP();
+		
+//		g.mostrarMatrizDistancia();
+		g.mostrarMatrizRecorrido();
+
+		
+		g.EncuentraDistancia("D", "I");
+		
+	}
+}

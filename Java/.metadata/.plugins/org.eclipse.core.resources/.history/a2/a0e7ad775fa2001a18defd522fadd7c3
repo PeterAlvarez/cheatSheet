@@ -1,0 +1,70 @@
+package NumerosStirling;
+
+public class NumStirlingNoOrdenados {
+	public static void main(String[] args) {
+		int filasTriangulo = 6;
+		long [] [] TP = new long [filasTriangulo+1] [filasTriangulo+1] ;
+		
+		for(int j = 0; j < TP.length; j++) {
+			TP[j] [0] = 1;
+			TP[j] [j] = 1;
+		}
+		
+		for(int i = 1; i < TP.length; i++) {
+			for(int j = 1; j < i; j++) {
+				TP [i] [j] = TP [i-1] [j-1] +  ( TP[i-1] [j] *(j+1) ) ;
+			}
+		}
+		
+		imprimirTP(TP);
+		
+//		int m = 20;
+//		int n = 10;
+//		System.out.println("");
+//		System.out.println(" Cm,n="+"C"+m+","+n+"="+TP[m][n]);
+		
+	}
+
+	private static void imprimirTP(long[][] tp) {
+	     for(int i = 0; i < tp.length; i++) {
+	    	 System.out.println("");
+	    	 for(int j = 0; j <= i; j++) {
+	    		 System.out.print(" "+tp[i][j]);
+	    	 }
+	    	 System.out.println("");
+	     }
+	}
+}
+//package NumerosStirling;
+//
+//import javax.naming.PartialResultException;
+//
+//public class NumStirlingNoOrdenados {
+//	public static void main(String[] args) {
+//		int tMatriz=6;
+//		int [][]NS = new int [tMatriz][tMatriz];
+//		
+//		String salida="";
+//		
+//		for( int i=0 ; i<NS.length ; i++ ) {
+//			for( int j=0 ; j<=i ; j++ ) {
+//				NS[i][0] = 1; NS[i][i] = 1;
+//				if( j>0  &&  i!=j ) {
+//					NS[i][j] = NS[i-1][j-1] + ( NS[i-1][j] * (j+1) ) ;
+//				}
+//				
+//				salida += String.valueOf(NS[i][j]);
+//			}
+//			salida += space( i , tMatriz ) + salida+"\n";
+//		}
+//		System.out.println(salida);
+//	}
+//	
+//	public static String space( int valor , int tMatriz ) {
+//		String space="";
+//		for ( int i=0 ; i<( tMatriz-valor ) ; i++ ) {
+//			space=" ";
+//		}
+//		return space;
+//	}
+//}

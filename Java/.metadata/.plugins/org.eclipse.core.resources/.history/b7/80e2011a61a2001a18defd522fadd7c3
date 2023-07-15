@@ -1,0 +1,37 @@
+
+package NumerosStirling;
+
+import javax.naming.PartialResultException;
+
+public class NumStirlingNoOrdenados {
+	public static void main(String[] args) {
+		int tMatriz=6;
+		int [][]NS = new int [tMatriz][tMatriz];
+		
+		String salida="";
+		
+		for( int i=0 ; i<NS.length ; i++ ) {
+			salida += space( i , tMatriz );
+			for( int j=0 ; j<=i ; j++ ) {
+				NS[i][0] = 1; NS[i][i] = 1;
+				if( j>0  &&  i!=j ) {
+					NS[i][j] = NS[i-1][j-1] + ( NS[i-1][j] * (j+1) ) ;
+				}
+				
+				salida += String.valueOf(NS[i][j]) + " ";
+			}
+			
+			salida +="\n";
+		}
+		System.out.println(salida);
+	}
+	
+	public static String space( int valor , int tMatriz ) {
+		String space="";
+		for ( int i=0 ; i<( tMatriz-i ) ; i++ ) {
+			space+=" ";
+		}
+		return space;
+	}
+}
+

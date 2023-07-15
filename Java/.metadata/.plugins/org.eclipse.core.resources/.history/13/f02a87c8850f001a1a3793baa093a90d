@@ -1,0 +1,164 @@
+package grafoPonderado;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class GrafoPonderado {
+	private int n = 0;//numero de vertices
+	private int capacidad;
+	private String nodos[];
+	private int mat[][];
+	private String mat2[][];
+	
+	//constructor
+	public GrafoPonderado( int capacidad ) {
+		this.capacidad = capacidad;
+		this.nodos = new String[ capacidad ];
+		this.mat = new int [ capacidad ][ capacidad ];
+		this.mat2 = new String [ capacidad ][ capacidad ];
+	}
+	
+	 // retorna tamaño del grafo *
+    public int getCapacidad() {
+        return this.capacidad;
+    }
+
+
+    // return numero de nodos existentes en el grafo*
+    public int getNodosTotal() {
+        return this.n;
+    }
+
+    // return true si el grafo es null *
+    public boolean esNulo() {
+        return n == 0;
+    }
+
+    // return true si el grafo esta lleno *
+    public boolean estaLleno() {
+        return capacidad == n;
+    }
+
+    // return false si existe aristas caso contrario true
+    public boolean estaVacio() { // ver mas adelante
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                if (mat[i][j] != 0)
+                    return false;
+        return true;
+    }
+    
+ // return true si el nodo existe *
+    public boolean existeNodo(String nombre) {
+        for (int i = 0; i < n ; i++)
+            if (nombre.toUpperCase().equals(nodos[i].toUpperCase()))
+                return true;
+        return false;
+    }
+
+    // return indice del un nodo *
+    // y return -1 si no encuentra el nodo *
+    public int indiceNodo(String nombre) {
+        for (int i = 0; i < n; i++)
+            if (nombre.toUpperCase().equals(nodos[i].toUpperCase()))
+                return i;
+        return -1;
+
+    }
+    
+    // return false si el nodo no se inserto y true caso contrario *
+    public boolean insertarNodo( String nombre  ) {
+        if (capacidad == n)// revisar
+            return false;
+        else {
+            nodos[n] = nombre;
+            for (int i = 0; i < n; i++) {
+                mat[i][n] = 0;
+                mat[n][i] = 0;
+            }
+            matrizRecorido(nombre,n);
+            n++;
+            
+            return true;
+        }
+    }
+    
+ // return el grafo y la matriz de aristas
+    public String toString() {
+        String cad = "";
+        for (int i = 0; i < n; i++)
+            cad = cad + nodos[i] + " ";
+        cad = cad + "\n\n";
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++)
+                cad = cad + mat2[i][j] + " ";
+            cad = cad + "\n";
+        }
+        cad = cad + "\n";
+        return cad;
+    }
+    
+    // inserta arco entre dos nodos y return true *
+    // Caso contrario return false si no encuentra *
+    // el nodo *
+    public boolean insertarArco(String a, String b, int peso) {
+        if (!existeNodo(a) || !existeNodo(b))
+            return false;
+        else {
+            mat[indiceNodo(a)][indiceNodo(b)] = peso;
+            mat[indiceNodo(b)][indiceNodo(a)] = peso;
+            return true;
+        }
+    }
+    
+ // return array de nodos enlazados con otro nodo pasado por parametro *
+    public LinkedList nodosAdyascentes(String nodo) {
+        LinkedList l = new LinkedList();
+        for (int i = 0; i < n; i++) {
+            if (i != indiceNodo(nodo) && mat[indiceNodo(nodo)][i] != 0)
+                l.add(nodos[i]);
+        }
+        return l;
+    }
+    
+    
+    public LinkedList amplitud(String nodo) {
+        LinkedList aux = new LinkedList();
+        if (existeNodo(nodo)) {
+            boolean visitados[] = new boolean[n];
+            Queue cola = new LinkedList();
+            cola.offer(nodo);
+            visitados[indiceNodo(nodo)] = true;
+            while (!cola.isEmpty()) { // isEmpty return true sy la cola esta vacia
+                nodo = (String) cola.poll();
+                aux.add(nodo);
+//              System.out.println(nodo);
+                LinkedList l = nodosAdyascentes(nodo);
+                while (!l.isEmpty()) {
+                    nodo = (String) l.remove(0);
+                    if (!visitados[indiceNodo(nodo)]) {
+                        cola.offer(nodo);
+                        visitados[indiceNodo(nodo)] = true;
+                    }
+                }
+            }
+        }
+        return aux;
+    }
+    
+    // El metodo floyd warshall requiere de dos matrices
+    //una matriz de recorrido(codigo implementado en clase) y
+    // una matriz de rrecorrido (implementada por el estudiante)
+    
+    
+    public void matrizRecorido( String nombre, int nodo ) {
+    	for (int i = 0; i < n; i++) {
+    		mat2[i][nodo]=nombre;
+        }
+        
+    }
+}
+
+
+
+

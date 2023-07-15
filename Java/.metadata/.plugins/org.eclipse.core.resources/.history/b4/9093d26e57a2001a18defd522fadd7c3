@@ -1,0 +1,31 @@
+package NumerosStirling;
+
+public class NumStirlingNoOrdenados {
+	public static void main(String[] args) {
+		int tMatriz=5;
+		int [][]NS = new int [tMatriz][tMatriz];
+		
+		for( int i=0 ; i<NS.length ; i++ ) {
+			for( int j=0 ; j<NS.length ; j++ ) {
+				NS[i][0] = 1;
+				NS[i][i] = 1;
+				if( i>0 && j!=i) {
+					NS[i][j]
+				}
+			}
+		}
+		
+		resultado( NS );
+		
+	}
+	
+	public static void resultado( int[][] NS ) {
+		for( int i=0 ; i<NS.length ; i++ ) {
+			for( int j=0 ; j<=i ; j++ ) {
+				System.out.print( NS[i][j]+" " );
+			}
+			System.out.println();
+		}
+		
+	}
+}

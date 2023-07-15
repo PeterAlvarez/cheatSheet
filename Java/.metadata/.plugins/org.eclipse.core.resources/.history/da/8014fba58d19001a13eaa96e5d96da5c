@@ -1,0 +1,90 @@
+package appGrafo;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
+public class VistaApp extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textBinario;
+	private JTextField textExadecimal;
+	String bin="";
+	String exa="";
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					VistaApp frame = new VistaApp();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public VistaApp() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton btnNewButton = new JButton("1");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				bin+=1;
+				textBinario.setText(bin);
+			}
+		});
+		btnNewButton.setBounds(29, 163, 84, 25);
+		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("0");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				bin+=0;
+				textBinario.setText(bin);
+			}
+		});
+		btnNewButton_1.setBounds(137, 163, 79, 25);
+		contentPane.add(btnNewButton_1);
+		
+		textBinario = new JTextField();
+		textBinario.setBounds(51, 96, 147, 25);
+		contentPane.add(textBinario);
+		textBinario.setColumns(10);
+		
+		JButton btnNewButton_2 = new JButton("Convertir\n");
+		btnNewButton_2.addActionListener( new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				
+				Integer.toHexString(Integer.parseInt(bin, 2)));
+				textExadecimal.setText();
+			}
+		});
+		btnNewButton_2.setBounds(81, 219, 117, 25);
+		contentPane.add(btnNewButton_2);
+		
+		textExadecimal = new JTextField();
+		textExadecimal.setBounds(290, 99, 129, 34);
+		contentPane.add(textExadecimal);
+		textExadecimal.setColumns(10);
+	}
+}

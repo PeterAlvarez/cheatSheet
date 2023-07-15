@@ -1,0 +1,10 @@
+INDEX VERSION 1.131+/home/tux/myCode/Java/.metadata/.plugins/org.eclipse.jdt.core
+399091168.index
+3397459694.index
+103680416.index
+3412257777.index
+3087957866.index
+1418079453.index
+1865797976.index
+1402089441.index
+3565466996.index

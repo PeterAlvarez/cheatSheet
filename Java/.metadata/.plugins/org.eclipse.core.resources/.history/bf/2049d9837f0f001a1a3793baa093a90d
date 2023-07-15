@@ -1,0 +1,38 @@
+package grafoPonderado;
+
+public class Principal {
+	public static void main(String[] args) {
+		GrafoPonderado g = new GrafoPonderado(10);
+		
+		g.insertarNodo("A");
+		g.insertarNodo("B");
+		g.insertarNodo("C");
+		g.insertarNodo("D");
+		g.insertarNodo("E");
+		g.insertarNodo("F");
+		g.insertarNodo("G");
+		g.insertarNodo("H");
+		g.insertarNodo("I");
+		
+		g.insertarArco("A", "B", 6);
+		g.insertarArco("A", "G", 8);
+		g.insertarArco("A", "D", 9); //10
+		g.insertarArco("B", "C", 9);//11
+		g.insertarArco("B", "H", 9);//13
+		g.insertarArco("B", "E", 9);//15
+		g.insertarArco("C", "H", 3);
+		g.insertarArco("D", "E", 6);
+		g.insertarArco("E", "F", 2);
+		g.insertarArco("F", "G", 4);
+		g.insertarArco("F", "I", 6);
+		g.insertarArco("I", "H", 7);
+		g.insertarArco("I", "G", 5);
+		
+		System.out.println(g.toString());
+		
+		System.out.println(g.nodosAdyascentes("I"));
+		
+		
+		
+	}
+}

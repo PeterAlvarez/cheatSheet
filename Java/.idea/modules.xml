@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ASD/ASD.iml" filepath="$PROJECT_DIR$/ASD/ASD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Colecciones/Colecciones.iml" filepath="$PROJECT_DIR$/Colecciones/Colecciones.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Examen_1/Examen_1.iml" filepath="$PROJECT_DIR$/Examen_1/Examen_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Examen_2/Examen_2.iml" filepath="$PROJECT_DIR$/Examen_2/Examen_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Juez_Boca/Juez_Boca.iml" filepath="$PROJECT_DIR$/Juez_Boca/Juez_Boca.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Listas/Listas.iml" filepath="$PROJECT_DIR$/Listas/Listas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Manejo_de_excepciones/Manejo_de_excepciones.iml" filepath="$PROJECT_DIR$/Manejo_de_excepciones/Manejo_de_excepciones.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Marino/Marino.iml" filepath="$PROJECT_DIR$/Marino/Marino.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Memorizar/Memorizar.iml" filepath="$PROJECT_DIR$/Memorizar/Memorizar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nuevo/Nuevo.iml" filepath="$PROJECT_DIR$/Nuevo/Nuevo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Pilas/Pilas.iml" filepath="$PROJECT_DIR$/Pilas/Pilas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Practicos_excepciones/Practicos_excepciones.iml" filepath="$PROJECT_DIR$/Practicos_excepciones/Practicos_excepciones.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Pre_exa_2/Pre_exa_2.iml" filepath="$PROJECT_DIR$/Pre_exa_2/Pre_exa_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Progra_java/Progra_java.iml" filepath="$PROJECT_DIR$/Progra_java/Progra_java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Progra_objetos/Progra_objetos.iml" filepath="$PROJECT_DIR$/Progra_objetos/Progra_objetos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Recursividad/Recursividad.iml" filepath="$PROJECT_DIR$/Recursividad/Recursividad.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ResolucionExamen1POO/ResolucionExamen1POO.iml" filepath="$PROJECT_DIR$/ResolucionExamen1POO/ResolucionExamen1POO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_clash/code_clash.iml" filepath="$PROJECT_DIR$/code_clash/code_clash.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ejercicios_Uri/ejercicios_Uri.iml" filepath="$PROJECT_DIR$/ejercicios_Uri/ejercicios_Uri.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ejercicios_coj/ejercicios_coj.iml" filepath="$PROJECT_DIR$/ejercicios_coj/ejercicios_coj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pra1_objet/pra1_objet.iml" filepath="$PROJECT_DIR$/pra1_objet/pra1_objet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/progra3_2019/progra3_2019.iml" filepath="$PROJECT_DIR$/progra3_2019/progra3_2019.iml" />
+      <module fileurl="file://$PROJECT_DIR$/respuestadelexamane1/respuestadelexmane1.iml" filepath="$PROJECT_DIR$/respuestadelexamane1/respuestadelexmane1.iml" />
+    </modules>
+  </component>
+</project>

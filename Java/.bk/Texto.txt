@@ -1,0 +1,14 @@
+Este texto sirve como 
+ejemplo demostrativo 
+para la busqueda de 
+patrones. La búqueda
+del patron debe ser 
+exacta, espetando
+signos, digitos
+numericos y letras
+mayúsculas y
+minúsculas. Los
+patrones encontrados
+en el texto no deben
+solaparse, por ejemplo
+ooooo contiene 2 oo

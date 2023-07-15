@@ -1,0 +1,14 @@
+package NumerosStirling;
+
+public class NumStirlingNoOrdenados {
+	public static void main(String[] args) {
+		int tMatriz=6;
+		int [][]NS = new int [tMatriz][tMatriz];
+		saludo();
+		
+	}
+	
+	public static saludo() {
+		System.out.println("hola Mmundo");
+	}
+}
