@@ -159,7 +159,6 @@ img {
   grid-area: footer;
 }
 
-
 /*#=========================GRID IMPLICIT==============*/
 .grid-implicit {
   width: 40%;
@@ -203,7 +202,6 @@ img {
   grid-row: span 3;
   grid-column: span 3;
 }
-
 
 /*#=========================Superposicion==============*/
 .grid-layers {

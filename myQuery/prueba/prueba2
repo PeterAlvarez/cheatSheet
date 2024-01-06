@@ -1,0 +1,15 @@
+CREATE table personas(
+    seq_persona serial not null,
+    cedula_identidad varchar(15),
+    nombres varchar(40) not null,
+    apellido_paterto varchar(40) not null,
+    apellido_materno varchar(40),
+    fotografia varchar(255),
+    telefono_celular varchar(20),
+    cod_tipo varchar(1) not null,
+    cod_estado integer  default 1,
+    constraint seq_p PRIMARY KEY (seq_persona)
+);
+
+
+

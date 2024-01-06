@@ -33,6 +33,7 @@ public class Arbol {
         }
 
         public Nodo() {
+
         }
 
         public Nodo(int dato) {
@@ -41,6 +42,7 @@ public class Arbol {
             der = null;
             rep = 1;
         }
+
     }
 
     Nodo raiz;
@@ -91,7 +93,6 @@ public class Arbol {
         }
         this.num++;
     }
-
 
     public void amplitud() {
         if (!vacio())
@@ -161,8 +162,6 @@ public class Arbol {
             enOrden(aux.der);
         }
     }
-
-
 
     /*
      * public void insertar(int dato) { if(raiz==null) //insertar else

@@ -22,14 +22,15 @@ public static void main( String[] args ){
 		}
 		if(pes>=100){
 			a4++;
-		}	
-		pes=tec.nextDouble();	
+		}
+		pes=tec.nextDouble();
 	}
 	
 	System.out.println("Menor de 50 kg: "+a1+" ; "+(a1*100)/cont+" % ");
 	System.out.println("Entre 50 Kg y menos de 70 Kg: "+a2+" ; "+(a2*100)/cont+" % ");
 	System.out.println("Entre 70 Kg y menos de 100 Kg: "+a3+" ; "+(a3*100)/cont+" % ");
 	System.out.println("Igual o mayor a 100 Kg: "+a4+" ; "+(a4*100)/cont+" % ");
-}	
+    tec.exit();
+}
 
 }
